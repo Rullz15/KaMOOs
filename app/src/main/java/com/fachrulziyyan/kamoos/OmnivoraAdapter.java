@@ -33,15 +33,20 @@ public class OmnivoraAdapter extends RecyclerView.Adapter<OmnivoraAdapter.Omnivo
     @Override
     public void onBindViewHolder(@NonNull OmnivoraViewHolder holder, int position) {
         OmnivoraItem item = itemList.get(position);
+
+        // Potong deskripsi menjadi satu paragraf dan tambahkan teks "Lihat Selengkapnya"
+        String fullDescription = item.getDescription();
+        String shortDescription = fullDescription.split("\\.")[0] + "... Lihat Selengkapnya";
+
         holder.titleTextView.setText(item.getTitle());
-        holder.descriptionTextView.setText(item.getDescription());
+        holder.descriptionTextView.setText(shortDescription);
         holder.imageView.setImageResource(item.getImageResId());
 
         // Tambahkan OnClickListener ke MaterialCardView
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, OmnivoraDetail.class);
             intent.putExtra("title", item.getTitle());
-            intent.putExtra("description", item.getDescription());
+            intent.putExtra("description", fullDescription); // Kirim deskripsi lengkap
             intent.putExtra("imageResId", item.getImageResId());
             context.startActivity(intent);
         });
