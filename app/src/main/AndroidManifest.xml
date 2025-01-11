@@ -13,6 +13,12 @@
         android:theme="@style/Theme.KaMOOs"
         tools:targetApi="31">
         <activity
+            android:name=".OmnivoraDetail"
+            android:exported="false" />
+        <activity
+            android:name=".OmnivoraActivity"
+            android:exported="false" />
+        <activity
             android:name=".AboutActivity"
             android:exported="false" />
         <activity

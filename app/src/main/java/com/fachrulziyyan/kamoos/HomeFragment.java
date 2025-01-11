@@ -1,6 +1,7 @@
 package com.fachrulziyyan.kamoos;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences; // Import untuk SharedPreferences
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -59,13 +60,16 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
+        view.findViewById(R.id.layoutOmnivora).setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), OmnivoraActivity.class);
+            startActivity(intent);
+        });
         // Terima nama lengkap
         SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
         String fullName = sharedPreferences.getString("fullName", "Nama Lengkap");
 
         // Update header
-        TextView welcomeText = view.findViewById(R.id.welcomeText); // Pastikan ID sesuai
+        TextView welcomeText = view.findViewById(R.id.welcomeText);
         welcomeText.setText("Selamat Datang, " + fullName);
 
         return view;

@@ -1,0 +1,56 @@
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Gambar -->
+        <ImageView
+            android:id="@+id/imgOmnivora"
+            android:layout_width="208dp"
+            android:layout_height="208dp"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/omnivora_image"
+            android:src="@drawable/kmstrans" />
+
+        <!-- Teks -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Judul -->
+            <TextView
+                android:id="@+id/tvTitleOmnivora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Judul Omnivora"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/coklat"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Deskripsi -->
+            <TextView
+                android:id="@+id/tvDescOmnivora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deskripsi singkat omnivora. Ayam, bebek, dan babi termasuk omnivora."
+                android:textSize="16sp"
+                android:textColor="@color/coklat" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
