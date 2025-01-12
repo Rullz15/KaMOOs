@@ -1,12 +1,12 @@
 package com.fachrulziyyan.kamoos;
 
-public class OmnivoraItem {
+public class HerbivoraItem {
     private String title;
     private String description;
     private int imageResId;
     private int soundResId; // Tambahkan ini untuk suara
 
-    public OmnivoraItem(String title, String description, int imageResId, int soundResId) {
+    public HerbivoraItem(String title, String description, int imageResId, int soundResId) {
         this.title = title;
         this.description = description;
         this.imageResId = imageResId;
@@ -29,3 +29,4 @@ public class OmnivoraItem {
         return soundResId; // Getter untuk suara
     }
 }
+

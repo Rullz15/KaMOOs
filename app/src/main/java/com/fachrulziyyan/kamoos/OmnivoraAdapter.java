@@ -13,58 +13,52 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class OmnivoraAdapter extends RecyclerView.Adapter<OmnivoraAdapter.OmnivoraViewHolder> {
+public class OmnivoraAdapter extends RecyclerView.Adapter<OmnivoraAdapter.ViewHolder> {
 
-    private List<OmnivoraItem> itemList;
     private Context context;
+    private List<OmnivoraItem> omnivoraList;
 
-    public OmnivoraAdapter(Context context, List<OmnivoraItem> itemList) {
+    public OmnivoraAdapter(Context context, List<OmnivoraItem> omnivoraList) {
         this.context = context;
-        this.itemList = itemList;
+        this.omnivoraList = omnivoraList;
     }
 
     @NonNull
     @Override
-    public OmnivoraViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_omnivora, parent, false);
-        return new OmnivoraViewHolder(view);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.item_omnivora, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull OmnivoraViewHolder holder, int position) {
-        OmnivoraItem item = itemList.get(position);
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        OmnivoraItem omnivoraItem = omnivoraList.get(position);
+        holder.titleTextView.setText(omnivoraItem.getTitle());
+        holder.imageView.setImageResource(omnivoraItem.getImageResId());
 
-        // Potong deskripsi menjadi satu paragraf dan tambahkan teks "Lihat Selengkapnya"
-        String fullDescription = item.getDescription();
-        String shortDescription = fullDescription.split("\\.")[0] + "... Lihat Selengkapnya";
-
-        holder.titleTextView.setText(item.getTitle());
-        holder.descriptionTextView.setText(shortDescription);
-        holder.imageView.setImageResource(item.getImageResId());
-
-        // Tambahkan OnClickListener ke MaterialCardView
+        // Event klik untuk membuka OmnivoraDetail
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, OmnivoraDetail.class);
-            intent.putExtra("title", item.getTitle());
-            intent.putExtra("description", fullDescription); // Kirim deskripsi lengkap
-            intent.putExtra("imageResId", item.getImageResId());
+            intent.putExtra("title", omnivoraItem.getTitle());
+            intent.putExtra("description", omnivoraItem.getDescription());
+            intent.putExtra("imageResId", omnivoraItem.getImageResId());
+            intent.putExtra("soundResId", omnivoraItem.getSoundResId()); // Kirim data suara
             context.startActivity(intent);
         });
     }
 
     @Override
     public int getItemCount() {
-        return itemList.size();
+        return omnivoraList.size();
     }
 
-    public static class OmnivoraViewHolder extends RecyclerView.ViewHolder {
-        TextView titleTextView, descriptionTextView;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView titleTextView;
         ImageView imageView;
 
-        public OmnivoraViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
             titleTextView = itemView.findViewById(R.id.tvTitleOmnivora);
-            descriptionTextView = itemView.findViewById(R.id.tvDescOmnivora);
             imageView = itemView.findViewById(R.id.imgOmnivora);
         }
     }

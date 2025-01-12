@@ -64,6 +64,12 @@ public class HomeFragment extends Fragment {
             Intent intent = new Intent(getActivity(), OmnivoraActivity.class);
             startActivity(intent);
         });
+        view.findViewById(R.id.layoutHerbivora).setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), HerbivoraActivity.class);
+            startActivity(intent);
+        });
+
+
         // Terima nama lengkap
         SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
         String fullName = sharedPreferences.getString("fullName", "Nama Lengkap");

@@ -16,12 +16,12 @@
 
         <!-- Gambar -->
         <ImageView
-            android:id="@+id/imgOmnivora"
+            android:id="@+id/imgHerbivora"
             android:layout_width="208dp"
             android:layout_height="208dp"
             android:layout_marginEnd="16dp"
             android:scaleType="centerCrop"
-            android:contentDescription="@string/omnivora_image"
+            android:contentDescription="@string/herbivora_image"
             android:src="@drawable/kmstrans" />
 
         <!-- Teks -->
@@ -34,18 +34,19 @@
 
             <!-- Judul -->
             <TextView
-                android:id="@+id/tvTitleOmnivora"
+                android:id="@+id/tvTitleHerbivora"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="70dp"
                 android:layout_marginBottom="8dp"
                 android:gravity="center"
-                android:text="Judul Omnivora"
+                android:text="Judul Herbivora"
                 android:textColor="@color/coklat"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
+

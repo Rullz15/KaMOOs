@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class OmnivoraDetail extends AppCompatActivity {
+public class HerbivoraDetail extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer; // MediaPlayer untuk memutar suara
     private boolean isPlaying = false; // Status apakah suara sedang dimainkan
@@ -16,7 +16,7 @@ public class OmnivoraDetail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.omnivora_detail);
+        setContentView(R.layout.herbivora_detail);
 
         // Ambil data dari Intent
         String title = getIntent().getStringExtra("title");
@@ -73,3 +73,4 @@ public class OmnivoraDetail extends AppCompatActivity {
         }
     }
 }
+
