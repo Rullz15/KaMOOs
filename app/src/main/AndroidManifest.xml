@@ -13,6 +13,15 @@
         android:theme="@style/Theme.KaMOOs"
         tools:targetApi="31">
         <activity
+            android:name=".KarnivoraItem"
+            android:exported="false" />
+        <activity
+            android:name=".KarnivoraDetail"
+            android:exported="false" />
+        <activity
+            android:name=".KarnivoraActivity"
+            android:exported="false" />
+        <activity
             android:name=".HerbivoraItem"
             android:exported="false" />
         <activity

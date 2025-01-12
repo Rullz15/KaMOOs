@@ -5,4 +5,5 @@
     <string name="banner_iklan">Hello blank fragment</string>
     <string name="omnivora_image">Omnivora Image</string>
     <string name="herbivora_image">Herbivora Image</string>
+    <string name="karnivora_image">Karnivora Image</string>
 </resources>

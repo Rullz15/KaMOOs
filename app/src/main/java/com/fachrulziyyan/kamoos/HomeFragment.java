@@ -68,6 +68,12 @@ public class HomeFragment extends Fragment {
             Intent intent = new Intent(getActivity(), HerbivoraActivity.class);
             startActivity(intent);
         });
+        view.findViewById(R.id.layoutKarnivora).setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), KarnivoraActivity.class);
+            startActivity(intent);
+        });
+
+
 
 
         // Terima nama lengkap
