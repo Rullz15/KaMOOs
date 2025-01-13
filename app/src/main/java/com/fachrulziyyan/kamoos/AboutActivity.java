@@ -47,14 +47,14 @@ public class AboutActivity extends AppCompatActivity {
         btnEmail.setOnClickListener(view -> {
             Intent intent = new Intent(Intent.ACTION_SENDTO);
             intent.setData(Uri.parse("mailto:yusuf.rizieq@gmail.com"));
-            intent.putExtra(Intent.EXTRA_SUBJECT, "Selamat siang! saya ingin memesan");
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Hello Dev! I'm your Customer");
             startActivity(intent);
         });
 
         // Intent ke Instagram
         ImageView btnInstagram = findViewById(R.id.instagram);
         btnInstagram.setOnClickListener(view -> {
-            String instagramUrl = "https://www.instagram.com/ysfryzn";
+            String instagramUrl = "https://www.instagram.com/rullz15_";
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(instagramUrl));
             startActivity(intent);
         });
