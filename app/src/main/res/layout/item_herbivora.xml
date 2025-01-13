@@ -42,7 +42,7 @@
                 android:gravity="center"
                 android:text="Judul Herbivora"
                 android:textColor="@color/coklat"
-                android:textSize="25sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
         </LinearLayout>

@@ -19,13 +19,6 @@
             android:gravity="start|center"
             android:orientation="horizontal">
 
-            <!-- Back Button -->
-            <ImageView
-                android:id="@+id/btnBack"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="5dp"
-                android:src="@drawable/ic_back" />
 
             <!-- Title -->
             <TextView

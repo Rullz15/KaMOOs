@@ -37,7 +37,7 @@ public class AboutActivity extends AppCompatActivity {
         // Intent ke WhatsApp
         ImageView btnWhatsapp = findViewById(R.id.whatsapp);
         btnWhatsapp.setOnClickListener(view -> {
-            String whatsappUrl = "https://wa.me/08123456789";
+            String whatsappUrl = "https://wa.me/081222847703";
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(whatsappUrl));
             startActivity(intent);
         });
@@ -46,15 +46,15 @@ public class AboutActivity extends AppCompatActivity {
         ImageView btnEmail = findViewById(R.id.email);
         btnEmail.setOnClickListener(view -> {
             Intent intent = new Intent(Intent.ACTION_SENDTO);
-            intent.setData(Uri.parse("mailto:holla.rullz@gmail.com"));
-            intent.putExtra(Intent.EXTRA_SUBJECT, "Hello from the App!");
+            intent.setData(Uri.parse("mailto:yusuf.rizieq@gmail.com"));
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Selamat siang! saya ingin memesan");
             startActivity(intent);
         });
 
         // Intent ke Instagram
         ImageView btnInstagram = findViewById(R.id.instagram);
         btnInstagram.setOnClickListener(view -> {
-            String instagramUrl = "https://www.instagram.com/azizi.asadel";
+            String instagramUrl = "https://www.instagram.com/ysfryzn";
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(instagramUrl));
             startActivity(intent);
         });
