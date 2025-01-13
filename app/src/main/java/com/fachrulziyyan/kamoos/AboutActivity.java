@@ -37,16 +37,20 @@ public class AboutActivity extends AppCompatActivity {
         // Intent ke WhatsApp
         ImageView btnWhatsapp = findViewById(R.id.whatsapp);
         btnWhatsapp.setOnClickListener(view -> {
-            String whatsappUrl = "https://wa.me/081222847703";
+            String phoneNumber = "6281222847703";
+            String message = "Hi KaMOOs Dev! I'm Your Customer";
+            String whatsappUrl = "https://wa.me/" + phoneNumber + "?text=" + Uri.encode(message);
+
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(whatsappUrl));
             startActivity(intent);
         });
+
 
         // Intent ke Gmail
         ImageView btnEmail = findViewById(R.id.email);
         btnEmail.setOnClickListener(view -> {
             Intent intent = new Intent(Intent.ACTION_SENDTO);
-            intent.setData(Uri.parse("mailto:yusuf.rizieq@gmail.com"));
+            intent.setData(Uri.parse("mailto:holla.@gmail.com"));
             intent.putExtra(Intent.EXTRA_SUBJECT, "Hello Dev! I'm your Customer");
             startActivity(intent);
         });
